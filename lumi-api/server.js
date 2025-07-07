@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000;
 
 
 app.use(cors({
-  origin: "https://lumi-ai-roan.vercel.app",
+  origin: "*",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"]
 }));
