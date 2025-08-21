@@ -37,7 +37,7 @@ app.post("/api/chat", upload.single("file"), async (req, res) => {
   try {
     // Se veio imagem, usa modelo com visão
     if (file) {
-      const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = ai.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
       const imagePart = {
         inlineData: {
@@ -56,7 +56,7 @@ app.post("/api/chat", upload.single("file"), async (req, res) => {
 
     } else {
 
-      const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = ai.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
       const result = await model.generateContent(prompt);
       const text = await result.response.text();
       return res.json({ response: text });
